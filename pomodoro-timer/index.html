@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>番茄钟</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="title-bar" id="titleBar">
+    <span class="drag-region">🍅 番茄钟</span>
+    <button class="close-btn" id="closeBtn">&times;</button>
+  </div>
+
+  <div class="progress-ring-container">
+    <svg class="progress-ring" viewBox="0 0 200 200">
+      <circle class="ring-bg" cx="100" cy="100" r="88" />
+      <circle class="ring-fg" id="ringForeground" cx="100" cy="100" r="88"
+        stroke-dasharray="553.1" stroke-dashoffset="0" />
+    </svg>
+    <div class="time-display" id="timeDisplay">25:00</div>
+  </div>
+
+  <div class="mode-tabs">
+    <button class="mode-btn active" data-mode="focus">专注</button>
+    <button class="mode-btn" data-mode="shortbreak">短休</button>
+    <button class="mode-btn" data-mode="longbreak">长休</button>
+  </div>
+
+  <div class="controls">
+    <button class="control-btn primary" id="startPauseBtn">开始</button>
+    <button class="control-btn secondary" id="resetBtn">重置</button>
+  </div>
+
+  <script src="renderer.js"></script>
+</body>
+</html>

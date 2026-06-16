@@ -1,0 +1,177 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: #1a1a2e;
+  color: #eee;
+  user-select: none;
+  overflow: hidden;
+  width: 340px;
+  height: 420px;
+}
+
+/* Title bar */
+.title-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 10px;
+  -webkit-app-region: drag;
+}
+
+.title-bar span {
+  font-size: 13px;
+  color: #aaa;
+}
+
+.close-btn {
+  -webkit-app-region: no-drag;
+  background: none;
+  border: none;
+  color: #666;
+  font-size: 18px;
+  cursor: pointer;
+  padding: 0 4px;
+  line-height: 1;
+}
+
+.close-btn:hover {
+  color: #fff;
+}
+
+/* Progress ring */
+.progress-ring-container {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  margin: 10px auto 16px;
+}
+
+.progress-ring {
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+}
+
+.ring-bg {
+  fill: none;
+  stroke: #2a2a4a;
+  stroke-width: 8;
+}
+
+.ring-fg {
+  fill: none;
+  stroke: #e74c3c;
+  stroke-width: 8;
+  stroke-linecap: round;
+  transition: stroke-dashoffset 0.3s ease, stroke 0.4s ease;
+}
+
+.time-display {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 48px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #fff;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Mode tabs */
+.mode-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  margin-bottom: 20px;
+}
+
+.mode-btn {
+  background: #2a2a4a;
+  border: none;
+  color: #888;
+  padding: 6px 18px;
+  border-radius: 20px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.mode-btn:hover {
+  background: #3a3a5a;
+  color: #ddd;
+}
+
+.mode-btn.active {
+  background: #e74c3c;
+  color: #fff;
+}
+
+/* Break mode colors */
+body.break-ring .ring-fg { stroke: #27ae60; }
+body.break-ring .mode-btn.active { background: #27ae60; }
+
+body.longbreak-ring .ring-fg { stroke: #3498db; }
+body.longbreak-ring .mode-btn.active { background: #3498db; }
+
+/* Controls */
+.controls {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+.control-btn {
+  border: none;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: all 0.2s;
+}
+
+.control-btn.primary {
+  background: #e74c3c;
+  color: #fff;
+  padding: 8px 32px;
+}
+
+body.break-ring .control-btn.primary { background: #27ae60; }
+body.longbreak-ring .control-btn.primary { background: #3498db; }
+
+.control-btn.primary:hover {
+  filter: brightness(1.2);
+}
+
+.control-btn.primary.running {
+  background: #f39c12;
+}
+
+.control-btn.secondary {
+  background: #2a2a4a;
+  color: #aaa;
+  padding: 8px 20px;
+}
+
+.control-btn.secondary:hover {
+  background: #3a3a5a;
+  color: #eee;
+}
+
+/* Flash overlay */
+.flash-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(231, 76, 60, 0.3);
+  pointer-events: none;
+  animation: flashPulse 0.5s ease 3;
+}
+
+@keyframes flashPulse {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.6; }
+}

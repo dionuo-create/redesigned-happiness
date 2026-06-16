@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(Remove-Item *)",
+      "PowerShell(Get-ChildItem *)",
+      "PowerShell($env:ELECTRON_MIRROR = \"https://npmmirror.com/mirrors/electron/\"; Set-Location \"D:\\\\杜灵\\\\非工作\\\\AI\\\\Cursor工作区\\\\CC练习\\\\pomodoro-timer\"; node node_modules/electron/install.js 2>&1)",
+      "PowerShell(Start-Process -FilePath \"npx\" -ArgumentList \"electron .\" -WorkingDirectory \"D:\\\\杜灵\\\\非工作\\\\AI\\\\Cursor工作区\\\\CC练习\\\\pomodoro-timer\")",
+      "PowerShell(Get-Process *)",
+      "PowerShell(Get-Item *)",
+      "PowerShell(Start-Process -Wait -FilePath \"$env:TEMP\\\\Git-2.45.2-64-bit.exe\" -ArgumentList '/VERYSILENT /NORESTART /NOCANCEL /SP- /CLOSEAPPLICATIONS /RESTARTAPPLICATIONS /COMPONENTS=\"icons,ext,git,assoc,shellext,gitlfs\" /MERGETASKS=\"!runcmdshell\"'; Write-Output \"Installation completed\")",
+      "PowerShell(git *)",
+      "PowerShell(git config *)",
+      "PowerShell(gh *)"
+    ]
+  }
+}
